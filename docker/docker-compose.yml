@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  
+  xraybones:
+    image: maximilianharr/xraybones
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+      - http_proxy=${DOCKER_PROXY}
+    user: root
+    stdin_open: true
+    environment:
+      - DISPLAY=${DISPLAY}
+    tty: true
+    read_only: false
+    ports:
+      - 8891:8891   # jupyter
+    volumes:
+    - ${HOME}/workspace:/media/docker/workspace
+    - ${HOME}/artifacts:/media/docker/artifacts

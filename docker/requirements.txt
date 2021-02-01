@@ -1,0 +1,8 @@
+flatbuffers
+jupyterlab
+matplotlib
+opencv-python
+pandas
+pyyaml
+sklearn
+tqdm
